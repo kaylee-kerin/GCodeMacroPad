@@ -85,17 +85,19 @@ HardwareTimer timer(2);
 
 HardwareTimer matrix(1);
 
-void func(){
-if (timer.getDirection()){
-  //timer.setCount(0);
-} else{
- // timer.setCount(PPR-1);
-}
-}
 
 
+/** KEYPAD I/O CONFIGS **/
 
-// 2-dimensional array of row pin numbers:
+/** As this code uses a scanning technique to read the keypad, we need to map the pins 
+ *  for each row and column into the system.  This is where we configure the pins. 
+
+ * The standard keypad I built, has 5 columns and 3 rows.  The rows can be shared across multiple panels.  Just list the pins columns are connected to.
+
+ * Since each button has a switch and an LED, we need a pin for each of those too.
+
+*/
+
 #define ROWCOUNT 10
 const int row[ROWCOUNT] = {
  PB9,PB8,PB1,PB10,PB11,PA8,PB15,PB14,PB13,PB12
@@ -119,6 +121,8 @@ char  inbuffer[128];
 int inbuffer_idx = 0;
 
 char statusMessage[81] = "Online";
+
+
 
 void setup() {
   
