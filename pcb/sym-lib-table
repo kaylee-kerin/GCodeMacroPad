@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "CNCKeypad-rescue")(type "KiCad")(uri "${KIPRJMOD}/CNCKeypad-rescue.kicad_sym")(options "")(descr ""))
+)
